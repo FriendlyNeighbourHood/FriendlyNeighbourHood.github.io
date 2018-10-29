@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="manifest" href="/manifest.json">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Never forget again</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <header>
+        <div>
+            <span class="logo">NFA</span>
+            <span class="title">Another weird to-do app :P</span>
+            <span class="menu">&emsp;</span>
+        </div>
+    </header>
+    <main>
+        <div class="main-content">
+            <p>Enter your tasks here and press enter</p>
+            <div class="form">
+                <input type="text" class="task-input" id="tasker" value="" onblur="checkForInputs(this)">
+                <label for="tasker">Your Task</label>
+            </div>            
+            <div class="button-group">
+                <div class="button remove" onclick="removeAllTasks()">Delete All Tasks</div>
+            </div>
+            <h3>Your Tasks</h3>
+            <div class="list-div">
+                
+                <ul>
+                
+                </ul>
+            </div>
+            
+            
+        </div>
+    </main>
+    <script>
+        function checkForInputs(theInput) {
+            if(theInput.value !== ""){
+                theInput.classList.add('stay')
+            }
+            else{
+                theInput.classList.remove('stay')
+            }            
+        }
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
