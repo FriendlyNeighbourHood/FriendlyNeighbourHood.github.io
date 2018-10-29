@@ -72,7 +72,7 @@ function dynamicallyUpdateArray(){
     }
 }
 function cancelTaskAndUpdateArray(event){
-    let taskValue = event.target.parentElement.childNodes[0].nodeValue;
+    let taskValue = event.target.parentElement.children[0].innerText;
     console.log(taskValue);
     let taskArray = JSON.parse(localStorage.getItem('tasks'));
     console.log(taskArray)
@@ -82,6 +82,7 @@ function cancelTaskAndUpdateArray(event){
     console.log(taskArray);
     localStorage.setItem('tasks',JSON.stringify(taskArray));
     dynamicallyUpdateArray();
+    location.reload();
 }
 function removeAllTasks(){
     localStorage.removeItem('tasks');
